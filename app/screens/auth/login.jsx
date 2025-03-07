@@ -1,42 +1,32 @@
 import {
-  View,
-  StyleSheet,
-  ImageBackground,
-  Text,
-  Pressable,
   Image,
+  ImageBackground,
+  Pressable,
+  StyleSheet,
+  Text,
+  View,
 } from "react-native";
 import { useRouter } from "expo-router";
 
-export default function App() {
+export default function Login() {
   const router = useRouter();
-
   return (
     <ImageBackground
       style={styles.background}
-      source={require("../assets/images/Landing-Background-1.png")}
+      source={require("../../../assets/images/Landing-Background-2.png")}
     >
       <View style={styles.logo}>
         <Image
           style={styles.logoImage}
-          source={require("../assets/images/main-logo.png")}
+          source={require("../../../assets/images/main-logo.png")}
         />
       </View>
       <View style={styles.buttonContainer}>
         <Pressable
           style={styles.landingScreenButton}
           onPress={() => {
-            console.log("Register Button pressed");
-            router.push("/screens/auth/register");
-          }}
-        >
-          <Text style={styles.landingScreenText}>Register</Text>
-        </Pressable>
-        <Pressable
-          style={styles.landingScreenButton}
-          onPress={() => {
-            console.log("Login Button pressed");
-            router.push("/screens/auth/login");
+            console.log("Home Redirect Button pressed");
+            router.push("/screens/tabs/home");
           }}
         >
           <Text style={styles.landingScreenText}>Login</Text>
@@ -51,6 +41,7 @@ const styles = StyleSheet.create({
     flex: 1,
     resizeMode: "cover",
     justifyContent: "center",
+
   },
   buttonContainer: {
     flex: 1,
